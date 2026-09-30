@@ -1,0 +1,98 @@
+.main{
+    margin-top: 10px;
+}
+body{
+  background-color: beige;
+  font-style: italic;
+  margin: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.logo2-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* 裁剪填满，不变形 */
+}
+
+.self-information{
+    border: 4px rgb(184, 68, 68) solid;
+    padding: 20px;
+    margin-top: 10px;
+}
+.search-input{
+    display: block;
+    margin-top: 10px;
+    width: 400px;
+   line-height: 24px;
+    margin: 10px auto;
+    border-radius: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.navigation{
+    display: flex;
+   justify-content: center;
+}
+.input-button button{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: bold;
+   width: 70px;
+   height: 50px;
+   margin-top: 10px;
+   border: 1px dotted navy;
+   border-radius: 4px;
+   background-color: azure;
+}
+.money-button button{
+    width: 70px;
+    height: 50px;
+    border: 2px solid yellow;
+    background-color: bisque;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-left: 3pxn;
+    pointer-events: painted;
+}
+/* 修正后的 author-card 样式 */
+.author-card {
+    margin: 10px auto;       /* 水平居中 */
+    width: 70%;
+    /* height: 60%;  删掉！高度让它自适应 */
+    display: flex;
+    align-items: center;     /* 垂直居中对齐 */
+    gap: 20px;               /* 图片和文字之间的间距 */
+    border-bottom: 6px solid pink;
+    background-color: rgb(189, 189, 223);
+    padding: 20px;           /* 给内部留点空间，更美观 */
+    box-shadow: 5px;
+}
+
+/* 限制图片尺寸 */
+.author-img {
+    flex: 0 0 150px;         /* 给图片容器固定 150px 的宽度，不放大也不缩小 */
+}
+
+.author-img img {
+    display: block;
+    width: 100%;             /* 宽度撑满 150px 容器 */
+    height: auto;            /* 高度自适应，保持比例 */
+    border-radius: 8px;      /* 可选：加个圆角好看点 */
+}
+
+/* 文字容器 */
+.author-text {
+    flex: 1;                 /* 占据右侧剩余空间 */
+    word-break: break-word;
+    display: flex;  /* 防止长单词撑破容器 */
+   
+}
+
+.author-text h2 {
+    margin: 5px 0;           /* 调整标题之间的间距 */
+    font-size: 1.2rem;
+    font-size: medium;  
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;     /* 如果觉得字太大，可以调小一点 */
+}
