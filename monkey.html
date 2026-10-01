@@ -1,42 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>personal website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Website - Kibo the Gorilla</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main">
-        <script src="index.js"></script>
-      <div class="logo2-img"><img src="https://pic.nximg.cn/file/20210723/32136227_125214135129_2.jpg" alt="Kibo is seeing you"></div>
-     <div class="self-information">
-        <h1>A Gorilla Introduces Himself
-     </h1>
+  <div class="main">
+    
+    <!-- 1. 顶部图片 -->
+    <div class="logo2-img">
+      <img src="kobi-left.webp" alt="Kibo is seeing you">
+    </div>
+
+    <!-- 2. 个人介绍区 -->
+    <div class="self-information">
+      <h1>A Gorilla Introduces Himself</h1>
       <ul>
-       <li>Hello. I am Kibo, a silverback mountain gorilla. You may see my big body, black fur, and serious face and think, Uh oh. But relax. I am usually a calm guy. I live in the misty forests of Central Africa with my troop: some females, some youngsters, and me, the leader. </li>
-
-       <li>My job is simple: protect my family, keep the peace, and find good food. I eat leaves, shoots, bamboo, stems, and fruit. Yes, I am a vegetarian. I can weigh around 200 kilograms, and I walk on my knuckles. When I beat my chest, it is not always a threat. It is gorilla talk. It means I am here. Respect the family  </li>
-
-        <li>I am gentle when I am respected, but I can be fierce if someone threatens my troop. Sadly, my kind is endangered because of habitat loss and poaching. So please help protect our forests. </li>
-
-        <li>Nice to meet you. Now, if you will excuse me, it is time for a nap and maybe a little bamboo snack. </li>
+        <li>Hello. I am Kibo, a silverback mountain gorilla. You may see my big body, black fur, and serious face and think, Uh oh. But relax. I am usually a calm guy. I live in the misty forests of Central Africa with my troop: some females, some youngsters, and me, the leader.</li>
+        <li>My job is simple: protect my family, keep the peace, and find good food. I eat leaves, shoots, bamboo, stems, and fruit. Yes, I am a vegetarian. I can weigh around 200 kilograms, and I walk on my knuckles. When I beat my chest, it is not always a threat. It is gorilla talk. It means I am here. Respect the family</li>
+        <li>I am gentle when I am respected, but I can be fierce if someone threatens my troop. Sadly, my kind is endangered because of habitat loss and poaching. So please help protect our forests.</li>
+        <li>Nice to meet you. Now, if you will excuse me, it is time for a nap and maybe a little bamboo snack.</li>
       </ul>
-     </div>
-     <p>pls connect with me on <a href="https://wx.mail.qq.com/home/index?sid=zYhTbYxtMEEusUhPALliZwAA#/list/1">click</a></p>
-     <input type="text" class="search-input" placeholder="enter here"  >
-     <div class="navigation" >
-     <div class="input-button" ><button> following me</button></div>
-      <div class="money-button"><a href="https://www.bilibili.com/video/BV15T411D7Md/?spm_id_from=333.337.search-card.all.click"><button>give some money<a/button></div>
-      </div>
-    <div class="number-box">
-        <div class="word-number">
-       <h1>Gorilla Count</h1>
-       <h2>enter</h2></div>
+    </div>
 
+    <!-- 3. 联系方式（修复了未闭合的 <a> 标签） -->
+    <p>pls connect with me on <a href="https://wx.mail.qq.com/home/index?sid=zYhTbYxtMEEusUhPALliZwAA#/list/1" target="_blank" rel="noopener noreferrer">click</a></p>
+    
+    <!-- 4. 输入框 -->
+    <input type="text" class="search-input" placeholder="enter here">
+
+    <!-- 5. 导航按钮区（遵循规范将 a 改造成按钮外观） -->
+    <div class="navigation">
+      <div class="input-button">
+        <button id="follwe-but" onclick="HumanMade_error()" type="button">following me</button>
+      </div>
+      <div class="money-button">
+        <a href="https://www.bilibili.com/video/BV15T411D7Md/?spm_id_from=333.337.search-card.all.click" target="_blank" rel="noopener noreferrer" class="btn-link">give money</a>
+      </div>    
     </div>
-</div>
+
+    <!-- 6. 计数器模块（修正了原本混在一起的 <div> 嵌套） -->
+    <div class="number-box">
+      <div class="word-number">
+        <h1>Gorilla Count🦍</h1>
+        <h2 id="count-el">0</h2>
+      </div>
+      <div class="number-button">
+        <button id="increment-btn" onclick="increment()" type="button">INCREMENT</button>
+      </div>
+      <div id="save-btn" class="commen-btn" onclick="save()" type="button" >save</div>
+      <p id="save-el" >previous counts🐵: </p>
     </div>
+
+  </div> <!-- .main 闭合 -->
+
+  <!-- 7. 脚本置底加载 -->
+  <script src="index.js"></script>
 </body>
 </html>

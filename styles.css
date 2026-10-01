@@ -45,22 +45,52 @@ body{
    border-radius: 4px;
    background-color: azure;
 }
-.money-button button{
-    width: 70px;
+/* 针对 .money-button 里的 a 标签进行改造 */
+.money-button a {
+    /* 1. 关键：将行内元素转换为行内块级元素，这样 width 和 height 才会生效 */
+    display: inline-block;
+    
+    /* 2. 尺寸与对齐 */
+    width: 120px; /* 适当调大宽度，避免文字折行 */
     height: 50px;
+    line-height: 50px; /* 让单行文字垂直居中 */
+    text-align: center; /* 让文字水平居中 */
+    
+    /* 3. 外观样式 */
     border: 2px solid yellow;
     background-color: bisque;
+    color: black; /* 改变链接默认的蓝色 */
+    text-decoration: none; /* 去掉默认的蓝色下划线 */
+    
+    /* 4. 字体与间距 */
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: lighter;
+    font-weight: normal;
     margin-top: 10px;
-    margin-left: 3pxn;
-    pointer-events: painted;
+    margin-left: 3px; /* 修正了原本的 3pxn */
+    
+    /* 5. 交互效果 */
+    border-radius: 4px; /* 可选：加一点圆角更好看 */
+    box-sizing: border-box; /* 保证边框不撑大整体尺寸 */
+}
+
+/* 鼠标悬停时的按钮反馈效果 */
+.money-button a:hover {
+    background-color: #ffe4b5;
+    cursor: pointer;
 }
 .number-box{
     margin: 5px auto;
     border: 3px solid palevioletred;
     width: 70%;
-    height: 60%;
+    height: 80%;
     background-color: aliceblue;
     text-align: center;
+}
+.commen-btn{
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: fantasy;
+    color: rgba(38, 36, 36, 0.645);
+    margin-top: 5px;
+    margin-bottom: 2px;
 }
