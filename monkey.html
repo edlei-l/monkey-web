@@ -53,6 +53,108 @@
       <div id="save-btn" class="commen-btn" onclick="save()" type="button" >save</div>
       <p id="save-el" >previous counts🐵: </p>
     </div>
+    <!-- 8. 大猩猩12点小游戏 -->
+<div class="gorilla-game">
+
+  <h1>🦍 Gorilla 12 Points</h1>
+
+  <p class="game-intro">
+    Welcome to Kibo's 12-point game!
+    Get as close to 12 as possible without going over.
+  </p>
+
+  <!-- 游戏状态 -->
+  <div class="game-status">
+    <h2 id="game-message">Ready?</h2>
+  </div>
+
+  <!-- 玩家牌 -->
+  <div class="player-area">
+    <h2>Your Cards 🐵</h2>
+
+    <div id="player-cards" class="cards">
+      <!-- JS 动态添加卡牌 -->
+    </div>
+
+    <p>
+      Your points:
+      <span id="player-score">0</span>
+    </p>
+  </div>
+
+  <!-- 大猩猩牌 -->
+  <div class="gorilla-area">
+    <h2>Kibo's Cards 🦍</h2>
+
+    <div id="gorilla-cards" class="cards">
+      <!-- JS 动态添加卡牌 -->
+    </div>
+
+    <p>
+      Kibo's points:
+      <span id="gorilla-score">0</span>
+    </p>
+  </div>
+
+  <!-- 游戏按钮 -->
+  <div class="game-buttons">
+
+    <button
+      id="start-game-btn"
+      type="button">
+      START GAME
+    </button>
+
+    <button
+      id="draw-card-btn"
+      type="button"
+      disabled>
+      DRAW CARD
+    </button>
+
+    <button
+      id="stop-btn"
+      type="button"
+      disabled>
+      STOP
+    </button>
+
+  </div>
+
+  <!-- 虚拟积分 -->
+  <div class="game-points">
+    <h2>🪙 Gorilla Points</h2>
+
+    <p>
+      Points:
+      <span id="game-points">100</span>
+    </p>
+
+    <input
+      type="number"
+      id="bet-input"
+      min="1"
+      placeholder="Enter virtual points">
+
+    <button
+      id="bet-btn"
+      type="button">
+      PLAY
+    </button>
+  </div>
+
+  <!-- 游戏记录 -->
+  <div class="game-history">
+
+    <h2>Game History</h2>
+
+    <p id="game-history-text">
+      No games yet.
+    </p>
+
+  </div>
+
+</div>
 
   </div> <!-- .main 闭合 -->
 

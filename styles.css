@@ -94,3 +94,459 @@ body{
     margin-top: 5px;
     margin-bottom: 2px;
 }
+/* ================================
+   🦍 Gorilla 12 Points Game
+   ================================ */
+
+.gorilla-game {
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 35px;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    145deg,
+    #172018,
+    #26352a
+  );
+
+  border: 2px solid #536b58;
+  border-radius: 25px;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(255, 255, 255, 0.03);
+
+  color: #f1f5f0;
+  text-align: center;
+}
+
+
+/* 游戏标题 */
+
+.gorilla-game > h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-size: 38px;
+  letter-spacing: 2px;
+
+  color: #d5e6d4;
+
+  text-shadow:
+    3px 3px 0 #101510,
+    0 0 15px rgba(150, 200, 150, 0.25);
+}
+
+
+/* 游戏说明 */
+
+.game-intro {
+  color: #bdcdbd;
+  font-size: 16px;
+  line-height: 1.7;
+
+  margin-bottom: 30px;
+}
+
+
+/* ================================
+   游戏状态
+   ================================ */
+
+.game-status {
+  padding: 15px;
+  margin-bottom: 25px;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  border-radius: 15px;
+}
+
+.game-status h2 {
+  margin: 0;
+
+  color: #d8e8d6;
+}
+
+
+/* ================================
+   玩家 / 大猩猩区域
+   ================================ */
+
+.player-area,
+.gorilla-area {
+  margin: 20px 0;
+  padding: 25px;
+
+  background: rgba(0, 0, 0, 0.20);
+
+  border-radius: 20px;
+
+  border: 1px solid #4e6353;
+}
+
+
+.player-area h2,
+.gorilla-area h2 {
+  margin-top: 0;
+
+  color: #d9e7d8;
+}
+
+
+/* 分数 */
+
+.player-area p,
+.gorilla-area p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#player-score,
+#gorilla-score {
+  display: inline-block;
+
+  min-width: 45px;
+  margin-left: 8px;
+
+  color: #d9f0d3;
+
+  font-size: 28px;
+}
+
+
+/* ================================
+   卡牌区域
+   ================================ */
+
+.cards {
+  min-height: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 15px;
+
+  margin: 20px 0;
+}
+
+
+/* JS生成出来的卡牌 */
+
+.card {
+  width: 75px;
+  height: 105px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    145deg,
+    #f3f3ed,
+    #cfd4cc
+  );
+
+  color: #1b211b;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  box-shadow:
+    0 8px 15px rgba(0, 0, 0, 0.3);
+
+  border: 3px solid #7e8c7d;
+
+  transition: 0.2s;
+}
+
+
+.card:hover {
+  transform: translateY(-6px) rotate(-2deg);
+}
+
+
+/* ================================
+   游戏按钮
+   ================================ */
+
+.game-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  margin: 30px 0;
+}
+
+
+.game-buttons button {
+  padding: 13px 25px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  background: #47644c;
+
+  box-shadow:
+    0 5px 0 #2b3d2e;
+
+  transition: all 0.15s ease;
+}
+
+
+.game-buttons button:hover {
+  background: #587a5d;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 0 #2b3d2e;
+}
+
+
+.game-buttons button:active {
+  transform: translateY(4px);
+
+  box-shadow:
+    0 1px 0 #2b3d2e;
+}
+
+
+/* 禁用按钮 */
+
+.game-buttons button:disabled {
+  background: #3b433c;
+
+  color: #888f89;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  transform: none;
+}
+
+
+/* 开始按钮 */
+
+#start-game-btn {
+  background: #738b55;
+
+  box-shadow:
+    0 5px 0 #465637;
+}
+
+
+#start-game-btn:hover {
+  background: #879f67;
+}
+
+
+/* 抽牌按钮 */
+
+#draw-card-btn {
+  background: #536f61;
+
+  box-shadow:
+    0 5px 0 #35493f;
+}
+
+
+/* 停止按钮 */
+
+#stop-btn {
+  background: #626d61;
+
+  box-shadow:
+    0 5px 0 #424a40;
+}
+
+
+/* ================================
+   虚拟积分区域
+   ================================ */
+
+.game-points {
+  margin-top: 30px;
+
+  padding: 25px;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  border-radius: 20px;
+
+  border: 1px solid #4e6353;
+}
+
+
+.game-points h2 {
+  margin-top: 0;
+
+  color: #dcebd9;
+}
+
+
+#game-points {
+  display: inline-block;
+
+  margin-left: 5px;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  color: #c6e3a9;
+}
+
+
+/* 输入框 */
+
+#bet-input {
+  width: 180px;
+
+  padding: 12px 15px;
+
+  box-sizing: border-box;
+
+  border: 2px solid #627763;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  background: #e8ece5;
+
+  color: #202620;
+
+  transition: 0.2s;
+}
+
+
+#bet-input:focus {
+  border-color: #94ae83;
+
+  box-shadow:
+    0 0 10px rgba(150, 180, 130, 0.25);
+}
+
+
+/* PLAY按钮 */
+
+#bet-btn {
+  margin-left: 8px;
+
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #637f52;
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+#bet-btn:hover {
+  background: #769460;
+
+  transform: translateY(-2px);
+}
+
+
+/* ================================
+   游戏记录
+   ================================ */
+
+.game-history {
+  margin-top: 25px;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  background: rgba(0, 0, 0, 0.18);
+}
+
+
+.game-history h2 {
+  margin-top: 0;
+
+  color: #d5e6d4;
+}
+
+
+#game-history-text {
+  color: #bdc8bc;
+
+  line-height: 1.8;
+}
+
+
+/* ================================
+   响应式设计
+   ================================ */
+
+@media screen and (max-width: 600px) {
+
+  .gorilla-game {
+    width: 94%;
+
+    padding: 20px;
+  }
+
+  .gorilla-game > h1 {
+    font-size: 28px;
+  }
+
+  .game-buttons {
+    flex-direction: column;
+  }
+
+  .game-buttons button {
+    width: 100%;
+  }
+
+  #bet-input {
+    width: 100%;
+
+    margin-bottom: 10px;
+  }
+
+  #bet-btn {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .card {
+    width: 60px;
+    height: 85px;
+
+    font-size: 23px;
+  }
+}
