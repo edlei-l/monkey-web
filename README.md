@@ -1,25 +1,36 @@
-# 🦍 大猩猩网页介绍 (Gorilla Exploration Web)
+# 🦍 Kibo the Gorilla - 个人主页与计数器 (Gorilla Counter)
 
-一个关于大猩猩（Gorilla）科普与展示的轻量级响应式静态网页，旨在介绍灵长类动物大猩猩的分类、生活习性与有趣冷知识。
-
-![GitHub repo size](https://img.shields.io/github/repo-size/edlei-l/monkey-web)
-![GitHub license](https://img.shields.io/github/license/edlei-l/monkey-web?default=MIT)
+这是一个关于大猩猩 Kibo 的个性化响应式网页，集成了 Kibo 的自我介绍、互动按钮以及一个带有**实时动态音效**的大猩猩计数器（Gorilla Counter）。
 
 ---
 
-## 🌟 项目亮点 (Features)
+## ✨ 功能特点
 
-- **🎨 现代设计**：采用了清爽的森林主题配色与直观的卡片式布局。
-- **📱 响应式布局**：基于 CSS Flexbox 与 Grid 打造，完美适配 Desktop、Pad 及 Mobile 各种屏幕尺寸。
-- **⚡️ 极轻量**：无任何第三方框架依赖，纯原生 HTML5 与 CSS3 编写，加载秒开。
-- **📖 丰富科普**：包含物种分类（西部/东部大猩猩）、社会结构（银背领袖）及有趣的鼻纹与饮食冷知识。
+- **🦍 大猩猩个人主页**：展示大猩猩 Kibo 的精美图片与生动的自我介绍（包含生活习性、族群保护倡议等）。
+- **🔢 互动计数器 (Gorilla Count)**：
+  - **INCREMENT（加数）**：点击增加大猩猩计数。
+  - **SAVE（保存）**：将当前计数保存至“历史记录”，并将当前计数器归零。
+- **🎵 沉浸式音效反馈**：点击“加数”与“保存”按钮时触发对应的音效提示。
+- **🌲 森林主题视觉设计**：基于深绿与自然调的 CSS 现代化响应式卡片排版，支持舒适的视觉体验与悬停动画（Transition）。
 
 ---
 
-## 📁 目录结构 (Directory Structure)
+## 🛠️ 技术栈
+
+- **HTML5**：语义化结构设计（排版、按钮、交互组件）
+- **CSS3**：Flexbox 弹性布局、卡片式阴影、圆角与渐变过渡效果
+- **JavaScript (ES6+)**：DOM 节点操作、变量状态控制、事件响应
+- **Web Audio API / HTML5 Audio API**：按钮点击时的音效触发与重置逻辑
+
+---
+
+## 📁 项目目录结构
 
 ```text
 monkey-web/
-├── monkey.html     # 网页核心 HTML 结构
-├── styles.css      # 网页样式与响应式布局 CSS
-└── README.md       # 项目说明文档
+├── index.html        # 网页主体结构
+├── styles.css        # 森林深绿主题 CSS 样式表
+├── index.js          # 计数器逻辑与音频控制脚本
+└── music/            # 音效资源文件夹
+    ├── coin.mp3      # 点击/加数音效
+    └── wow.mp3       # 保存音效
