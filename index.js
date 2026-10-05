@@ -1,8 +1,12 @@
 let gorillaNumber = 0;
+let input_contect=[];
 const  erroeEl=document.getElementById('follwe-but')
 const countEl = document.getElementById('count-el');
 const saveEl = document.getElementById('save-el');
-
+const followEL=document.getElementById('follwe-btn');
+const input_contectEL=document.getElementById('saveInput-btn')
+const search_inputEL=document.querySelector('.search-input')
+const data_inputEL=document.getElementById('database')
 // 1. 分别创建加数音效和保存音效
 const incrementSound = new Audio('music/coin.mp3');
 const saveSound = new Audio('music/wow.mp3');
@@ -29,9 +33,19 @@ function save() {
     gorillaNumber = 0;
     countEl.textContent = gorillaNumber;
 }
-function HumanMade_error(){
-    erroeEl.textContent='kibo don\'t have ins'
-}
+followEL.addEventListener('click',function(){
+   let L=Math.floor(Math.random()*6)+1
+   if(L>3){
+    followEL.textContent='kobi hate u!!! '
+   }else{followEL.textContent='kobi love u *-*'}
+})
+input_contectEL.addEventListener('click',function(){
+ const value=search_inputEL.value;
+ input_contect.push(value);
+ for(i=0;i<input_contect.length;i++){
+ data_inputEL.textContent=' '+ input_contect[i];}
+  
+})
 /* =========================================================
    🦍 Gorilla 24 Points Game
    ========================================================= */

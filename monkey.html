@@ -30,15 +30,17 @@
     
     <!-- 4. 输入框 -->
     <input type="text" class="search-input" placeholder="enter here">
+    <ul id="database" >you input:</ul>
 
     <!-- 5. 导航按钮区（遵循规范将 a 改造成按钮外观） -->
     <div class="navigation">
       <div class="input-button">
-        <button id="follwe-but" onclick="HumanMade_error()" type="button">following me</button>
+        <button id="follwe-btn"  type="button">following me</button>
       </div>
       <div class="money-button">
         <a href="https://www.bilibili.com/video/BV15T411D7Md/?spm_id_from=333.337.search-card.all.click" target="_blank" rel="noopener noreferrer" class="btn-link">give money</a>
-      </div>    
+      </div>
+      <div id="saveInput-btn" ><button>save input</button></div>    
     </div>
 
     <!-- 6. 计数器模块（修正了原本混在一起的 <div> 嵌套） -->
