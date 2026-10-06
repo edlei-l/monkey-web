@@ -1,5 +1,7 @@
 let gorillaNumber = 0;
-let input_contect=[];
+let input_contect = JSON.parse(
+    localStorage.getItem('memory') || '[]'
+);
 const  erroeEl=document.getElementById('follwe-but')
 const countEl = document.getElementById('count-el');
 const saveEl = document.getElementById('save-el');
@@ -7,7 +9,8 @@ const followEL=document.getElementById('follwe-btn');
 const input_contectEL=document.getElementById('saveInput-btn')
 const search_inputEL=document.querySelector('.search-input')
 const data_inputEL=document.getElementById('database')
-// 1. 分别创建加数音效和保存音效
+const delete_btnEL=document.getElementById('delete-btn')
+// 1. 分别创建加数音效和保存音效,
 const incrementSound = new Audio('music/coin.mp3');
 const saveSound = new Audio('music/wow.mp3');
 function increment() {
@@ -36,17 +39,57 @@ function save() {
 followEL.addEventListener('click',function(){
    let L=Math.floor(Math.random()*6)+1
    if(L>3){
-    followEL.textContent='kobi hate u!!! '
+    followEL.textContent='kobi hate u!try again '
    }else{followEL.textContent='kobi love u *-*'}
 })
-input_contectEL.addEventListener('click',function(){
- const value=search_inputEL.value;
- input_contect.push(value);
- for(i=0;i<input_contect.length;i++){
- data_inputEL.textContent=' '+ input_contect[i];}
-  
+input_contectEL.addEventListener('click', function () {
+
+    const value = search_inputEL.value;
+
+    input_contect.push(value);
+
+    search_inputEL.value = '';
+
+    let p = [];
+
+    for (let i = 0; i < input_contect.length; i++) {
+        p += '<li>' + input_contect[i] + '</li>';
+    }
+
+    data_inputEL.innerHTML = p;
+
+    localStorage.setItem(
+        'memory',
+        JSON.stringify(input_contect)
+    );
+
+    // 保存之后再读取
+    let nameFromLocal = JSON.parse(
+        localStorage.getItem('memory')
+    );
+
+    console.log(nameFromLocal);
+   input_contect=nameFromLocal
+   
+    
+});
+delete_btnEL.addEventListener('click',function(){
+  localStorage.clear()
+  input_contect=[]
+  showData()
 })
-/* =========================================================
+function showData() {
+    let p = '';
+
+    for (let i = 0; i < input_contect.length; i++) {
+        p += '<li>' + input_contect[i] + '</li>';
+    }
+
+    data_inputEL.innerHTML = p;
+}
+showData()
+/* ===
+======================================================
    🦍 Gorilla 24 Points Game
    ========================================================= */
 

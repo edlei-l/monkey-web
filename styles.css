@@ -71,6 +71,31 @@ body{
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
   margin-left: 5px;
 }
+#delete-btn {
+  display: inline-block;   /* 不再独占一行,可以和其他按钮并排 */
+  vertical-align: top;     /* 顶部对齐 */
+}
+
+#delete-btn button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;            /* 和其他按钮同高 */
+  margin-top: 10px;        /* 和其他按钮同样的上边距 */
+  padding: 0 24px;         /* 高度固定后,只需要左右 padding */
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #4f8cff, #2f6bff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(47, 107, 255, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  margin-left: 5px;
+}
 /* 针对 .money-button 里的 a 标签进行改造 */
 .money-button a {
     /* 1. 关键：将行内元素转换为行内块级元素，这样 width 和 height 才会生效 */
